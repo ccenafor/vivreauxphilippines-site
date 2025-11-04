@@ -10,7 +10,6 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://vivreauxphilippines.com/">
   <meta property="og:image" content="assets/logo.png">
-  <link rel="icon" href="assets/logo.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>html{scroll-behavior:smooth}</style>
 </head>
@@ -56,7 +55,7 @@
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <h2 data-i18n="videos.title" class="text-2xl font-bold text-sky-900 mb-6">Dernière vidéo</h2>
       <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-lg ring-1 ring-black/5 bg-black">
-        <iframe class="w-full h-full" src="https://www.youtube.com/embed?listType=user_uploads&list=vivreauxphilippines" title="Vivre aux Philippines — YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe class="w-full h-full" src="https://www.youtube.com/embed/BlUqf8tga1w?si=H3fuLykWGcGI7k64" title="Vivre aux Philippines — YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     </div>
   </section>
@@ -114,8 +113,283 @@
 
   <script>
     const STRINGS={fr:{"nav.videos":"Vidéos","nav.links":"Adresses utiles","nav.follow":"Nous suivre","hero.title":"Vivre aux Philippines","hero.tag":"Conseils, vie quotidienne, voyages et expatriation — en vidéo.","cta.watch":"Regarder sur YouTube","cta.follow":"Nous suivre","about.text":"Un site simple et léger pour rassembler nos vidéos, nos réseaux sociaux et des liens utiles pour préparer votre séjour ou votre installation aux Philippines.","videos.title":"Dernière vidéo","links.title":"Adresses utiles","socials.title":"Rejoignez la communauté","footer.lang":"Langue :"},en:{"nav.videos":"Videos","nav.links":"Useful links","nav.follow":"Follow","hero.title":"Vivre aux Philippines","hero.tag":"Tips, everyday life, travel and expat life — on video.","cta.watch":"Watch on YouTube","cta.follow":"Follow us","about.text":"A clean one-page hub to gather our videos, social channels, and practical links for your trip or new life in the Philippines.","videos.title":"Latest video","links.title":"Useful addresses","socials.title":"Join the community","footer.lang":"Language:"}};
-    const LINKS={fr:[{group:"Ambassades & Consulats",items:[{label:"Ambassade de France aux Philippines",href:"https://ph.ambafrance.org/Nous-joindre-et-nous-trouver-2796"},{label:"Alliance Française",href:"https://www.alliance.ph/accueil-en/"},{label:"Ambassade des Philippines en France",href:"https://parispe.dfa.gov.ph/"}]},{group:"Autres adresses utiles",items:[{label:"Bureau de l'immigration",href:"https://www.immigration.gov.ph/"},{label:"Chambre de commerce et d'industrie",href:"https://www.philippinechamber.com/"},{label:"French Tech Philippines",href:"https://frenchtech-ph.com/"}]},{group:"Groupes Facebook",items:[{label:"Ambassade de France (Facebook)",href:"https://www.facebook.com/FrenchEmbassyPH/"},{label:"French Tech (Facebook)",href:"https://www.facebook.com/frenchtechphils/"},{label:"Francophones aux Philippines",href:"https://www.facebook.com/groups/FrancophonesauxPhilippines/"},{label:"Union pour les Français aux Philippines",href:"https://www.facebook.com/groups/949538928795245/"},{label:"Les Français aux Philippines",href:"https://www.facebook.com/groups/1776490822578557/"},{label:"Francophones à Cebu",href:"https://www.facebook.com/groups/180752325436768/"},{label:"French in Philippines",href:"https://www.facebook.com/groups/FrenchInPhilippines/"},{label:"Expats Philippines",href:"https://www.facebook.com/groups/phexpats/"},{label:"Cebu Foreigners Club",href:"https://www.facebook.com/groups/434275483334061/"},{label:"Cebu Underground Club for Expats and Foreigners",href:"https://www.facebook.com/groups/cebuundergroundexpats/"},{label:"Manila Foreigners Club",href:"https://www.facebook.com/groups/1935131489867710/"},{label:"Expats Dumaguete 1",href:"https://www.facebook.com/groups/291651582115957"},{label:"Expats Dumaguete 2",href:"https://www.facebook.com/groups/1499406230190585"},{label:"Expats Bohol",href:"https://www.facebook.com/groups/569310459785142"}] }],en:[{group:"Embassies & Consulates",items:[{label:"French Embassy in the Philippines",href:"https://ph.ambafrance.org/Nous-joindre-et-nous-trouver-2796"},{label:"Alliance Française",href:"https://www.alliance.ph/accueil-en/"},{label:"Philippine Embassy in France",href:"https://parispe.dfa.gov.ph/"}]},{group:"Other useful links",items:[{label:"Bureau of Immigration (PH)",href:"https://www.immigration.gov.ph/"},{label:"Philippine Chamber of Commerce & Industry",href:"https://www.philippinechamber.com/"},{label:"French Tech Philippines",href:"https://frenchtech-ph.com/"}]},{group:"Facebook groups",items:[{label:"French Embassy (Facebook)",href:"https://www.facebook.com/FrenchEmbassyPH/"},{label:"French Tech (Facebook)",href:"https://www.facebook.com/frenchtechphils/"},{label:"Francophones in the Philippines",href:"https://www.facebook.com/groups/FrancophonesauxPhilippines/"},{label:"Union for French in the Philippines",href:"https://www.facebook.com/groups/949538928795245/"},{label:"French People in the Philippines",href:"https://www.facebook.com/groups/1776490822578557/"},{label:"Francophones in Cebu",href:"https://www.facebook.com/groups/180752325436768/"},{label:"French in Philippines",href:"https://www.facebook.com/groups/FrenchInPhilippines/"},{label:"Expats Philippines",href:"https://www.facebook.com/groups/phexpats/"},{label:"Cebu Foreigners Club",href:"https://www.facebook.com/groups/434275483334061/"},{label:"Cebu Underground Club for Expats and Foreigners",href:"https://www.facebook.com/groups/cebuundergroundexpats/"},{label:"Manila Foreigners Club",href:"https://www.facebook.com/groups/1935131489867710/"},{label:"Expats Dumaguete 1",href:"https://www.facebook.com/groups/291651582115957"},{label:"Expats Dumaguete 2",href:"https://www.facebook.com/groups/1499406230190585"},{label:"Expats Bohol",href:"https://www.facebook.com/groups/569310459785142"}]}]};
-    function renderGroups(lang='fr'){const c=document.getElementById('linkGroups');c.innerHTML='';LINKS[lang].forEach(g=>{const card=document.createElement('div');card.className='bg-white/80 backdrop-blur rounded-2xl p-6 ring-1 ring-black/5 shadow-sm';const t=document.createElement('h3');t.className='font-semibold text-sky-800 mb-4';t.textContent=g.group;const ul=document.createElement('ul');ul.className='space-y-3';g.items.forEach(it=>{const li=document.createElement('li');li.innerHTML=`<a href="${it.href}" class="group flex items-start gap-3" target="_blank" rel="noreferrer noopener"><span class="mt-1 inline-block w-2 h-2 rounded-full bg-gradient-to-r from-sky-400 to-emerald-400"></span><span class="text-slate-700 group-hover:text-sky-700 underline decoration-sky-200 underline-offset-4">${it.label}</span></a>`;ul.appendChild(li);});card.appendChild(t);card.appendChild(ul);c.appendChild(card);});}
+    const LINKS={
+      "fr": [
+        {
+          "group": "Ambassades & Consulats",
+          "items": [
+            {
+              "label": "Ambassade de France aux Philippines",
+              "href": "https://ph.ambafrance.org/Nous-joindre-et-nous-trouver-2796"
+            },
+            {
+              "label": "Alliance Française",
+              "href": "https://www.alliance.ph/accueil-en/"
+            },
+            {
+              "label": "Ambassade des Philippines en France",
+              "href": "https://parispe.dfa.gov.ph/"
+            }
+          ]
+        },
+        {
+          "group": "Autres adresses utiles",
+          "items": [
+            {
+              "label": "Bureau de l'immigration",
+              "href": "https://www.immigration.gov.ph/"
+            },
+            {
+              "label": "Chambre de commerce et d'industrie",
+              "href": "https://www.philippinechamber.com/"
+            },
+            {
+              "label": "French Tech Philippines",
+              "href": "https://frenchtech-ph.com/"
+            }
+          ]
+        },
+        {
+          "group": "GROUPES FACEBOOK :",
+          "sections": [
+            {
+              "title": "Ambassade de France :",
+              "items": [
+                {
+                  "label": "Ambassade de France",
+                  "href": "https://www.facebook.com/FrenchEmbassyPH/"
+                }
+              ]
+            },
+            {
+              "title": "French Tech :",
+              "items": [
+                {
+                  "label": "French Tech Philippines",
+                  "href": "https://www.facebook.com/frenchtechphils/"
+                }
+              ]
+            },
+            {
+              "title": "Francophones :",
+              "items": [
+                {
+                  "label": "Francophones aux Philippines",
+                  "href": "https://www.facebook.com/groups/FrancophonesauxPhilippines/"
+                },
+                {
+                  "label": "Union pour les Français aux Philippines",
+                  "href": "https://www.facebook.com/groups/949538928795245/"
+                },
+                {
+                  "label": "Les Français aux Philippines",
+                  "href": "https://www.facebook.com/groups/1776490822578557/"
+                },
+                {
+                  "label": "Francophones à Cebu",
+                  "href": "https://www.facebook.com/groups/180752325436768/"
+                },
+                {
+                  "label": "French in Philippines",
+                  "href": "https://www.facebook.com/groups/FrenchInPhilippines/"
+                }
+              ]
+            },
+            {
+              "title": "Expats Philippines :",
+              "items": [
+                {
+                  "label": "Expats Philippines",
+                  "href": "https://www.facebook.com/groups/phexpats/"
+                }
+              ]
+            },
+            {
+              "title": "Expats Cebu :",
+              "items": [
+                {
+                  "label": "Cebu Foreigners Club",
+                  "href": "https://www.facebook.com/groups/434275483334061/"
+                },
+                {
+                  "label": "Cebu Underground Club for Expats and Foreigners",
+                  "href": "https://www.facebook.com/groups/cebuundergroundexpats/"
+                }
+              ]
+            },
+            {
+              "title": "Expats Manille :",
+              "items": [
+                {
+                  "label": "Manila Foreigners Club",
+                  "href": "https://www.facebook.com/groups/1935131489867710/"
+                }
+              ]
+            },
+            {
+              "title": "Expats Dumaguete :",
+              "items": [
+                {
+                  "label": "Expats Dumaguete — Groupe 1",
+                  "href": "https://www.facebook.com/groups/291651582115957"
+                },
+                {
+                  "label": "Expats Dumaguete — Groupe 2",
+                  "href": "https://www.facebook.com/groups/1499406230190585"
+                }
+              ]
+            },
+            {
+              "title": "Expats Bohol :",
+              "items": [
+                {
+                  "label": "Expats Bohol",
+                  "href": "https://www.facebook.com/groups/569310459785142"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "en": [
+        {
+          "group": "Embassies & Consulates",
+          "items": [
+            {
+              "label": "French Embassy in the Philippines",
+              "href": "https://ph.ambafrance.org/Nous-joindre-et-nous-trouver-2796"
+            },
+            {
+              "label": "Alliance Française",
+              "href": "https://www.alliance.ph/accueil-en/"
+            },
+            {
+              "label": "Philippine Embassy in France",
+              "href": "https://parispe.dfa.gov.ph/"
+            }
+          ]
+        },
+        {
+          "group": "Other useful links",
+          "items": [
+            {
+              "label": "Bureau of Immigration (PH)",
+              "href": "https://www.immigration.gov.ph/"
+            },
+            {
+              "label": "Philippine Chamber of Commerce & Industry",
+              "href": "https://www.philippinechamber.com/"
+            },
+            {
+              "label": "French Tech Philippines",
+              "href": "https://frenchtech-ph.com/"
+            }
+          ]
+        },
+        {
+          "group": "FACEBOOK GROUPS:",
+          "sections": [
+            {
+              "title": "French Embassy:",
+              "items": [
+                {
+                  "label": "French Embassy",
+                  "href": "https://www.facebook.com/FrenchEmbassyPH/"
+                }
+              ]
+            },
+            {
+              "title": "French Tech:",
+              "items": [
+                {
+                  "label": "French Tech Philippines",
+                  "href": "https://www.facebook.com/frenchtechphils/"
+                }
+              ]
+            },
+            {
+              "title": "Francophones:",
+              "items": [
+                {
+                  "label": "Francophones in the Philippines",
+                  "href": "https://www.facebook.com/groups/FrancophonesauxPhilippines/"
+                },
+                {
+                  "label": "Union for French in the Philippines",
+                  "href": "https://www.facebook.com/groups/949538928795245/"
+                },
+                {
+                  "label": "French People in the Philippines",
+                  "href": "https://www.facebook.com/groups/1776490822578557/"
+                },
+                {
+                  "label": "Francophones in Cebu",
+                  "href": "https://www.facebook.com/groups/180752325436768/"
+                },
+                {
+                  "label": "French in Philippines",
+                  "href": "https://www.facebook.com/groups/FrenchInPhilippines/"
+                }
+              ]
+            },
+            {
+              "title": "Expats Philippines:",
+              "items": [
+                {
+                  "label": "Expats Philippines",
+                  "href": "https://www.facebook.com/groups/phexpats/"
+                }
+              ]
+            },
+            {
+              "title": "Expats Cebu:",
+              "items": [
+                {
+                  "label": "Cebu Foreigners Club",
+                  "href": "https://www.facebook.com/groups/434275483334061/"
+                },
+                {
+                  "label": "Cebu Underground Club for Expats and Foreigners",
+                  "href": "https://www.facebook.com/groups/cebuundergroundexpats/"
+                }
+              ]
+            },
+            {
+              "title": "Expats Manila:",
+              "items": [
+                {
+                  "label": "Manila Foreigners Club",
+                  "href": "https://www.facebook.com/groups/1935131489867710/"
+                }
+              ]
+            },
+            {
+              "title": "Expats Dumaguete:",
+              "items": [
+                {
+                  "label": "Expats Dumaguete — Group 1",
+                  "href": "https://www.facebook.com/groups/291651582115957"
+                },
+                {
+                  "label": "Expats Dumaguete — Group 2",
+                  "href": "https://www.facebook.com/groups/1499406230190585"
+                }
+              ]
+            },
+            {
+              "title": "Expats Bohol:",
+              "items": [
+                {
+                  "label": "Expats Bohol",
+                  "href": "https://www.facebook.com/groups/569310459785142"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    };
+    function renderGroups(lang='fr'){const c=document.getElementById('linkGroups');c.innerHTML='';LINKS[lang].forEach(g=>{const card=document.createElement('div');card.className='bg-white/80 backdrop-blur rounded-2xl p-6 ring-1 ring-black/5 shadow-sm';const t=document.createElement('h3');t.className='font-semibold text-sky-800 mb-4';t.textContent=g.group;card.appendChild(t);if(g.sections){const sectionsWrapper=document.createElement('div');sectionsWrapper.className='space-y-5';g.sections.forEach(section=>{const sectionEl=document.createElement('div');const sectionTitle=document.createElement('h4');sectionTitle.className='text-sm font-semibold uppercase tracking-wide text-sky-600';sectionTitle.textContent=section.title;sectionEl.appendChild(sectionTitle);const ul=document.createElement('ul');ul.className='mt-3 space-y-3';section.items.forEach(it=>{const li=document.createElement('li');li.innerHTML=`<a href="${it.href}" class="group flex items-start gap-3" target="_blank" rel="noreferrer noopener"><span class="mt-1 inline-block w-2 h-2 rounded-full bg-gradient-to-r from-sky-400 to-emerald-400"></span><span class="text-slate-700 group-hover:text-sky-700 underline decoration-sky-200 underline-offset-4">${it.label}</span></a>`;ul.appendChild(li);});sectionEl.appendChild(ul);sectionsWrapper.appendChild(sectionEl);});card.appendChild(sectionsWrapper);}else{const ul=document.createElement('ul');ul.className='space-y-3';g.items.forEach(it=>{const li=document.createElement('li');li.innerHTML=`<a href="${it.href}" class="group flex items-start gap-3" target="_blank" rel="noreferrer noopener"><span class="mt-1 inline-block w-2 h-2 rounded-full bg-gradient-to-r from-sky-400 to-emerald-400"></span><span class="text-slate-700 group-hover:text-sky-700 underline decoration-sky-200 underline-offset-4">${it.label}</span></a>`;ul.appendChild(li);});card.appendChild(ul);}c.appendChild(card);});}
     function applyI18n(lang='fr'){document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');el.textContent=STRINGS[lang][k]??el.textContent;});document.getElementById('langLabel').textContent=STRINGS[lang]['footer.lang'];}
     function setLang(lang){localStorage.setItem('vap_lang',lang);document.documentElement.lang=lang;document.getElementById('setFR').className='px-3 py-1 rounded-full border '+(lang==='fr'?'bg-sky-600 text-white border-sky-600':'bg-white text-sky-700 border-sky-200');document.getElementById('setEN').className='px-3 py-1 rounded-full border '+(lang==='en'?'bg-sky-600 text-white border-sky-600':'bg-white text-sky-700 border-sky-200');applyI18n(lang);renderGroups(lang);}
     document.getElementById('year').textContent=new Date().getFullYear();const saved=localStorage.getItem('vap_lang')||'fr';setLang(saved);
