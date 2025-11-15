@@ -32,6 +32,11 @@
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>html{scroll-behavior:smooth}</style>
+  <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/7.0.3/css/flag-icons.min.css"
+      integrity="sha512-bZBu2H0+FGFz/stDN/L0k8J0G8qVsAL0ht1qg5kTwtAheiXwiRKyCq1frwfbSFSJN3jooR5kauE0YjtPzhZtJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
 </head>
 <body class="bg-gradient-to-b from-sky-50 via-emerald-50 to-orange-50 text-slate-800">
   <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-white/70 border-b border-white/40">
@@ -40,11 +45,14 @@
         <img src="assets/logo.png" alt="Vivre aux Philippines logo" class="h-10 w-auto hidden sm:block">
         <nav class="ml-auto hidden md:flex gap-6">
           <a data-i18n="nav.videos" href="#videos" class="text-slate-700 hover:text-sky-700 transition font-medium">Vidéos</a>
+          <a data-i18n="nav.visa" href="#visa" class="text-slate-700 hover:text-sky-700 transition font-medium">Visa</a>
           <a data-i18n="nav.links" href="#liens" class="text-slate-700 hover:text-sky-700 transition font-medium">Adresses utiles</a>
           <a data-i18n="nav.follow" href="#suivre" class="text-slate-700 hover:text-sky-700 transition font-medium">Nous suivre</a>
         </nav>
         <div class="ml-auto md:ml-4 flex items-center gap-2">
-          <button id="toggleLang" class="px-3 py-1.5 rounded-full bg-white border border-sky-200 shadow-sm text-sky-800 text-sm hover:bg-sky-50" aria-label="Toggle language">FR / EN</button>
+          <button id="toggleLang" class="px-3 py-1.5 rounded-full bg-white border border-sky-200 shadow-sm text-sky-800 text-sm hover:bg-sky-50" aria-label="Toggle language">
+            <span class="fi fi-fr"></span> / <span class="fi fi-gb"></span>
+          </button>
         </div>
       </div>
     </div>
@@ -68,6 +76,21 @@
       <h2 data-i18n="videos.title" class="text-2xl font-bold text-sky-900 mb-6">Dernière vidéo</h2>
       <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-lg ring-1 ring-black/5 bg-black">
         <iframe class="w-full h-full" src="https://www.youtube.com/embed/BlUqf8tga1w?si=H3fuLykWGcGI7k64" title="Vivre aux Philippines — YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="visa" class="relative scroll-mt-24 py-14 md:py-20 bg-center bg-cover" style="background-image:url('assets/Visas-Philippines.jpg');">
+    <div class="absolute inset-0 bg-sky-900/70"></div>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 data-i18n="visa.title" class="text-3xl md:text-4xl font-bold text-white mb-10 text-center">Visas pour les Philippines</h2>
+      <div class="max-w-4xl mx-auto bg-white/10 backdrop-blur-md p-4 sm:p-6 rounded-2xl text-white/90 text-sm sm:text-base">
+        <p data-i18n="visa.disclaimer" class="text-center text-balance">
+          Les informations sur les visas changent régulièrement. Consultez toujours les sites officiels de l'ambassade des Philippines de votre pays et du Bureau de l'Immigration philippin pour obtenir les informations les plus récentes et les plus précises.
+        </p>
+      </div>
+      <div id="visa-content" class="mt-10">
+        <!-- Visa guides and checker tool will be injected here by JavaScript -->
       </div>
     </div>
   </section>
@@ -127,7 +150,100 @@
   </footer>
 
   <script>
-    const STRINGS={fr:{"nav.videos":"Vidéos","nav.links":"Adresses utiles","nav.follow":"Nous suivre","hero.title":"Vivre aux Philippines","hero.tag":"Conseils, vie quotidienne, voyages et expatriation — en vidéo.","cta.watch":"Regarder sur YouTube","cta.follow":"Nous suivre","about.text":"Un site simple et léger pour rassembler nos vidéos, nos réseaux sociaux et des liens utiles pour préparer votre séjour ou votre installation aux Philippines.","videos.title":"Dernière vidéo","links.title":"Adresses utiles","socials.title":"Rejoignez la communauté","footer.lang":"Langue :"},en:{"nav.videos":"Videos","nav.links":"Useful links","nav.follow":"Follow","hero.title":"Vivre aux Philippines","hero.tag":"Tips, everyday life, travel and expat life — on video.","cta.watch":"Watch on YouTube","cta.follow":"Follow us","about.text":"A clean one-page hub to gather our videos, social channels, and practical links for your trip or new life in the Philippines.","videos.title":"Latest video","links.title":"Useful addresses","socials.title":"Join the community","footer.lang":"Language:"}};
+    const STRINGS={fr:{"nav.videos":"Vidéos","nav.visa":"Visa","nav.links":"Adresses utiles","nav.follow":"Nous suivre","hero.title":"Vivre aux Philippines","hero.tag":"Conseils, vie quotidienne, voyages et expatriation — en vidéo.","cta.watch":"Regarder sur YouTube","cta.follow":"Nous suivre","about.text":"Un site simple et léger pour rassembler nos vidéos, nos réseaux sociaux et des liens utiles pour préparer votre séjour ou votre installation aux Philippines.","videos.title":"Dernière vidéo","visa.title":"Visas pour les Philippines","visa.disclaimer":"Les informations sur les visas changent régulièrement. Consultez toujours les sites officiels de l'ambassade des Philippines de votre pays et du Bureau de l'Immigration philippin pour obtenir les informations les plus récentes et les plus précises.","visa.checker.title":"Vérificateur de Visa","visa.checker.label":"Quelle est votre nationalité ?","visa.checker.button":"Vérifier","visa.checker.result.needs_visa":"Pour votre nationalité, un visa est probablement requis avant l'arrivée.","visa.checker.result.no_visa":"Bonne nouvelle ! Les détenteurs d'un passeport de votre pays peuvent généralement entrer aux Philippines sans visa pour un séjour allant jusqu'à 30 jours.","visa.checker.result.balikbayan":"En tant que citoyen philippin ou ancien citoyen (ou son conjoint/enfant voyageant avec lui), vous pouvez bénéficier du privilège Balikbayan, autorisant un séjour d'un an sans visa.","visa.checker.result.select":"Veuillez sélectionner une nationalité.","visa.guides.title":"Guides des principaux visas","links.title":"Adresses utiles","socials.title":"Rejoignez la communauté","footer.lang":"Langue :"},en:{"nav.videos":"Videos","nav.visa":"Visa","nav.links":"Useful links","nav.follow":"Follow","hero.title":"Vivre aux Philippines","hero.tag":"Tips, everyday life, travel and expat life — on video.","cta.watch":"Watch on YouTube","cta.follow":"Follow us","about.text":"A clean one-page hub to gather our videos, social channels, and practical links for your trip or new life in the Philippines.","videos.title":"Latest video","visa.title":"Visas for the Philippines","visa.disclaimer":"Visa information changes regularly. Always consult the official websites of the Philippine embassy in your country and the Philippine Bureau of Immigration for the most current and accurate information.","visa.checker.title":"Visa Checker Tool","visa.checker.label":"What is your nationality?","visa.checker.button":"Check","visa.checker.result.needs_visa":"For your nationality, a visa is likely required before arrival.","visa.checker.result.no_visa":"Good news! Passport holders from your country can typically enter the Philippines without a visa for a stay of up to 30 days.","visa.checker.result.balikbayan":"As a Filipino citizen or former citizen (or their spouse/child traveling with them), you may be entitled to the Balikbayan Privilege, allowing a one-year visa-free stay.","visa.checker.result.select":"Please select a nationality.","visa.guides.title":"Main Visa Guides","links.title":"Useful addresses","socials.title":"Join the community","footer.lang":"Language:"}};
+    
+    const VISA_DATA = {
+      fr: [
+        { title: "Extension de visa touriste", content: "Les touristes peuvent prolonger leur séjour au-delà de la période initiale sans visa. Cela se fait dans les bureaux du Bureau de l'Immigration. La première extension dure 29 jours, et les suivantes peuvent varier." },
+        { title: "SRRV (Visa de Retraité Résident Spécial)", content: "Le SRRV est un visa non-immigrant pour les étrangers souhaitant prendre leur retraite aux Philippines. Il nécessite un dépôt de garantie et offre un droit de séjour indéfini. Géré par la Philippine Retirement Authority (PRA)." },
+        { title: "Visa de mariage 13A", content: "Pour les étrangers mariés à un citoyen philippin. Il accorde le statut de résident permanent après une période probatoire d'un an. C'est la voie la plus courante vers la résidence permanente par le mariage." },
+        { title: "Privilège Balikbayan", content: "Concerne les anciens citoyens philippins et leur famille proche (conjoint et enfants) voyageant avec eux. Permet une entrée sans visa et un séjour d'un an, renouvelable." },
+        { title: "Visa étudiant", content: "Requis pour les étrangers souhaitant étudier dans un établissement d'enseignement philippin accrédité. L'école doit d'abord accepter l'étudiant avant que la demande de visa puisse commencer." },
+        { title: "Permis de travail et visas d'affaires", content: "Un permis de travail pour étranger (AEP) du DOLE et un visa de travail (généralement le 9g) sont nécessaires pour un emploi à long terme. Des visas d'affaires existent pour des séjours de courte durée liés au travail." }
+      ],
+      en: [
+        { title: "Tourist Visa Extension", content: "Tourists can extend their stay beyond the initial visa-free period. This is done at Bureau of Immigration offices. The first extension is for 29 days, and subsequent ones can vary." },
+        { title: "SRRV (Special Resident Retiree's Visa)", content: "The SRRV is a non-immigrant visa for foreigners wishing to retire in the Philippines. It requires a security deposit and provides the right to reside indefinitely. Managed by the Philippine Retirement Authority (PRA)." },
+        { title: "13A Marriage Visa", content: "For foreign nationals married to a Filipino citizen. It grants permanent residency status after a one-year probationary period. It is the most common path to permanent residency through marriage." },
+        { title: "Balikbayan Privilege", content: "Applies to former Filipino citizens and their immediate family (spouse and children) traveling with them. Allows for a visa-free entry and a one-year stay, which can be extended." },
+        { title: "Student Visa", content: "Required for foreign nationals who wish to study at an accredited Philippine educational institution. The school must first accept the student before the visa application can begin." },
+        { title: "Work Permits & Business Visas", content: "An Alien Employment Permit (AEP) from DOLE and a work visa (typically the 9g) are required for long-term employment. Business visas exist for short-term work-related stays." }
+      ]
+    };
+
+    const ALL_NATIONALITIES = ["Afghanistan","Albania","Algeria","American Samoa","Andorra","Angola","Anguilla","Antarctica","Antigua and Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia (Plurinational State of)","Bonaire, Sint Eustatius and Saba","Bosnia and Herzegovina","Botswana","Bouvet Island","Brazil","British Indian Ocean Territory","Brunei Darussalam","Bulgaria","Burkina Faso","Burundi","Cabo Verde","Cambodia","Cameroon","Canada","Cayman Islands","Central African Republic","Chad","Chile","China","Christmas Island","Cocos (Keeling) Islands","Colombia","Comoros","Congo","Congo (Democratic Republic of the)","Cook Islands","Costa Rica","Côte d'Ivoire","Croatia","Cuba","Curaçao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Eswatini","Ethiopia","Falkland Islands (Malvinas)","Faroe Islands","Fiji","Finland","France","French Guiana","French Polynesia","French Southern Territories","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guadeloupe","Guam","Guatemala","Guernsey","Guinea","Guinea-Bissau","Guyana","Haiti","Heard Island and McDonald Islands","Holy See","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran (Islamic Republic of)","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Korea (Democratic People's Republic of)","Korea (Republic of)","Kuwait","Kyrgyzstan","Lao People's Democratic Republic","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macao","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Martinique","Mauritania","Mauritius","Mayotte","Mexico","Micronesia (Federated States of)","Moldova (Republic of)","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauru","Nepal","Netherlands","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","Niue","Norfolk Island","North Macedonia","Northern Mariana Islands","Norway","Oman","Pakistan","Palau","Palestine, State of","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Pitcairn","Poland","Portugal","Puerto Rico","Qatar","Réunion","Romania","Russian Federation","Rwanda","Saint Barthélemy","Saint Helena, Ascension and Tristan da Cunha","Saint Kitts and Nevis","Saint Lucia","Saint Martin (French part)","Saint Pierre and Miquelon","Saint Vincent and the Grenadines","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Sint Maarten (Dutch part)","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Georgia and the South Sandwich Islands","South Sudan","Spain","Sri Lanka","Sudan","Suriname","Svalbard and Jan Mayen","Sweden","Switzerland","Syrian Arab Republic","Taiwan, Province of China","Tajikistan","Tanzania, United Republic of","Thailand","Timor-Leste","Togo","Tokelau","Tonga","Trinidad and Tobago","Tunisia","Turkey","Turkmenistan","Turks and Caicos Islands","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom of Great Britain and Northern Ireland","United States of America","United States Minor Outlying Islands","Uruguay","Uzbekistan","Vanuatu","Venezuela (Bolivarian Republic of)","Viet Nam","Virgin Islands (British)","Virgin Islands (U.S.)","Wallis and Futuna","Western Sahara","Yemen","Zambia","Zimbabwe"];
+
+    const VISA_FREE_NATIONALITIES = [
+      "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Australia", "Austria", "Bahamas", "Bahrain", "Barbados", "Belgium", "Benin", "Bhutan", "Bolivia", "Botswana", "Brazil", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Central African Republic", "Chad", "Chile", "Colombia", "Comoros", "Congo", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "El Salvador", "Equatorial Guinea", "Estonia", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hungary", "Iceland", "Indonesia", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Kazakhstan", "Kenya", "Kiribati", "Kuwait", "Kyrgyzstan", "Lao People's Democratic Republic", "Latvia", "Lesotho", "Liberia", "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Monaco", "Mongolia", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Norway", "Oman", "Palau", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Poland", "Portugal", "Qatar", "Republic of Korea", "Romania", "Russian Federation", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Seychelles", "Singapore", "Slovak Republic", "Slovenia", "Solomon Islands", "South Africa", "Spain", "Suriname", "Swaziland", "Sweden", "Switzerland", "Tajikistan", "Tanzania", "Thailand", "Togo", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "United Arab Emirates", "United Kingdom", "United States of America", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Zambia", "Zimbabwe"
+    ];
+
+    function renderVisaContent(lang = 'fr') {
+      const container = document.getElementById('visa-content');
+      container.innerHTML = `
+        <div class="grid md:grid-cols-2 gap-8">
+          <div id="visa-guides-container" class="space-y-4"></div>
+          <div id="visa-checker-container"></div>
+        </div>
+      `;
+      renderVisaGuides(lang);
+      renderVisaChecker(lang);
+    }
+
+    function renderVisaGuides(lang = 'fr') {
+      const guidesContainer = document.getElementById('visa-guides-container');
+      const guidesData = VISA_DATA[lang];
+      let guidesHtml = `<h3 class="text-2xl font-bold text-white mb-4" data-i18n="visa.guides.title">${STRINGS[lang]['visa.guides.title']}</h3>`;
+      guidesData.forEach(guide => {
+        guidesHtml += `
+          <details class="bg-white/10 backdrop-blur-sm rounded-lg cursor-pointer">
+            <summary class="p-4 font-semibold text-white">${guide.title}</summary>
+            <div class="p-4 border-t border-white/20 text-white/80">
+              <p>${guide.content}</p>
+            </div>
+          </details>
+        `;
+      });
+      guidesContainer.innerHTML = guidesHtml;
+    }
+
+    function renderVisaChecker(lang = 'fr') {
+      const checkerContainer = document.getElementById('visa-checker-container');
+      
+      checkerContainer.innerHTML = `
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 sticky top-24">
+          <h3 class="text-2xl font-bold text-white mb-4" data-i18n="visa.checker.title">${STRINGS[lang]['visa.checker.title']}</h3>
+          <label for="nationality-select" class="block font-medium text-white mb-2" data-i18n="visa.checker.label">${STRINGS[lang]['visa.checker.label']}</label>
+          <select id="nationality-select" class="w-full p-2 rounded-md bg-white/80 text-slate-800">
+            <option value="">-- Select --</option>
+            ${ALL_NATIONALITIES.sort().map(n => `<option value="${n}">${n}</option>`).join('')}
+          </select>
+          <button id="check-visa-btn" class="mt-4 w-full bg-sky-600 text-white py-2 px-4 rounded-md hover:bg-sky-500 transition" data-i18n="visa.checker.button">${STRINGS[lang]['visa.checker.button']}</button>
+          <div id="visa-result" class="mt-4 text-center font-semibold"></div>
+        </div>
+      `;
+
+      document.getElementById('check-visa-btn').addEventListener('click', () => checkVisa(lang));
+    }
+
+    function checkVisa(lang = 'fr') {
+      const select = document.getElementById('nationality-select');
+      const resultDiv = document.getElementById('visa-result');
+      const nationality = select.value;
+
+      let messageKey = '';
+      if (!nationality) {
+        messageKey = 'visa.checker.result.select';
+      } else if (nationality === 'Philippines') {
+        messageKey = 'visa.checker.result.balikbayan';
+      } else if (VISA_FREE_NATIONALITIES.includes(nationality)) {
+        messageKey = 'visa.checker.result.no_visa';
+      } else {
+        messageKey = 'visa.checker.result.needs_visa';
+      }
+      
+      resultDiv.textContent = STRINGS[lang][messageKey];
+    }
+
     const LINKS={
       "fr": [
         {
@@ -347,8 +463,8 @@
       ]
     };
     function renderGroups(lang='fr'){const c=document.getElementById('linkGroups');c.innerHTML='';LINKS[lang].forEach(g=>{const card=document.createElement('div');const baseClasses='bg-white/80 backdrop-blur rounded-2xl p-6 ring-1 ring-black/5 shadow-sm';card.className=g.sections?`${baseClasses} md:col-span-2` : baseClasses;const t=document.createElement('h3');const titleBase='font-semibold text-sky-800 mb-4';t.className=g.centerTitle?`${titleBase} text-center text-xl md:text-2xl tracking-wide` : titleBase;t.textContent=g.group;card.appendChild(t);if(g.sections){const sectionsWrapper=document.createElement('div');sectionsWrapper.className='grid gap-6 md:grid-cols-2';g.sections.forEach(section=>{const sectionEl=document.createElement('div');sectionEl.className='space-y-3';const sectionTitle=document.createElement('h4');sectionTitle.className='text-sm font-semibold uppercase tracking-wide text-sky-600 text-center md:text-left';sectionTitle.textContent=section.title;sectionEl.appendChild(sectionTitle);const ul=document.createElement('ul');ul.className='space-y-3';section.items.forEach(it=>{const li=document.createElement('li');li.innerHTML=`<a href="${it.href}" class="group flex items-start gap-3" target="_blank" rel="noreferrer noopener"><span class="mt-1 inline-block w-2 h-2 rounded-full bg-gradient-to-r from-sky-400 to-emerald-400"></span><span class="text-slate-700 group-hover:text-sky-700 underline decoration-sky-200 underline-offset-4">${it.label}</span></a>`;ul.appendChild(li);});sectionEl.appendChild(ul);sectionsWrapper.appendChild(sectionEl);});card.appendChild(sectionsWrapper);}else{const ul=document.createElement('ul');ul.className='space-y-3';g.items.forEach(it=>{const li=document.createElement('li');li.innerHTML=`<a href="${it.href}" class="group flex items-start gap-3" target="_blank" rel="noreferrer noopener"><span class="mt-1 inline-block w-2 h-2 rounded-full bg-gradient-to-r from-sky-400 to-emerald-400"></span><span class="text-slate-700 group-hover:text-sky-700 underline decoration-sky-200 underline-offset-4">${it.label}</span></a>`;ul.appendChild(li);});card.appendChild(ul);}c.appendChild(card);});}
-    function applyI18n(lang='fr'){document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');el.textContent=STRINGS[lang][k]??el.textContent;});document.getElementById('langLabel').textContent=STRINGS[lang]['footer.lang'];}
-    function setLang(lang){localStorage.setItem('vap_lang',lang);document.documentElement.lang=lang;document.getElementById('setFR').className='px-3 py-1 rounded-full border '+(lang==='fr'?'bg-sky-600 text-white border-sky-600':'bg-white text-sky-700 border-sky-200');document.getElementById('setEN').className='px-3 py-1 rounded-full border '+(lang==='en'?'bg-sky-600 text-white border-sky-600':'bg-white text-sky-700 border-sky-200');applyI18n(lang);renderGroups(lang);}
+    function applyI18n(lang='fr'){document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(STRINGS[lang][k])el.textContent=STRINGS[lang][k];});document.getElementById('langLabel').textContent=STRINGS[lang]['footer.lang'];}
+    function setLang(lang){localStorage.setItem('vap_lang',lang);document.documentElement.lang=lang;document.getElementById('setFR').className='px-3 py-1 rounded-full border '+(lang==='fr'?'bg-sky-600 text-white border-sky-600':'bg-white text-sky-700 border-sky-200');document.getElementById('setEN').className='px-3 py-1 rounded-full border '+(lang==='en'?'bg-sky-600 text-white border-sky-600':'bg-white text-sky-700 border-sky-200');applyI18n(lang);renderGroups(lang);renderVisaContent(lang);}
     document.getElementById('year').textContent=new Date().getFullYear();const saved=localStorage.getItem('vap_lang')||'fr';setLang(saved);
     document.getElementById('toggleLang').addEventListener('click',()=>{const cur=localStorage.getItem('vap_lang')||'fr';setLang(cur==='fr'?'en':'fr');});
     document.getElementById('setFR').addEventListener('click',()=>setLang('fr'));
