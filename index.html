@@ -32,6 +32,11 @@
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>html{scroll-behavior:smooth}</style>
+  <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/7.0.3/css/flag-icons.min.css"
+      integrity="sha512-0jNvImkhANRsrLX9BbZrsqTz2QolOCLcJ6XNxM6WrohZ9O0/OnPvqxnXxo1iMPf3EMhZQvqAOvQ6o2hoSwl0Gg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
 </head>
 <body class="bg-gradient-to-b from-sky-50 via-emerald-50 to-orange-50 text-slate-800">
   <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-white/70 border-b border-white/40">
@@ -44,7 +49,9 @@
           <a data-i18n="nav.follow" href="#suivre" class="text-slate-700 hover:text-sky-700 transition font-medium">Nous suivre</a>
         </nav>
         <div class="ml-auto md:ml-4 flex items-center gap-2">
-          <button id="toggleLang" class="px-3 py-1.5 rounded-full bg-white border border-sky-200 shadow-sm text-sky-800 text-sm hover:bg-sky-50" aria-label="Toggle language">FR / EN</button>
+          <button id="toggleLang" class="px-3 py-1.5 rounded-full bg-white border border-sky-200 shadow-sm text-sky-800 text-sm hover:bg-sky-50" aria-label="Toggle language">
+            <span class="fi fi-fr"></span> / <span class="fi fi-gb"></span>
+          </button>
         </div>
       </div>
     </div>
