@@ -71,6 +71,34 @@
     </div>
   </section>
 
+  <section id="currency-converter" class="py-4 bg-sky-800 text-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+        <h3 data-i18n="converter.title" class="text-lg font-semibold text-sky-100 whitespace-nowrap">Convertisseur de devises</h3>
+        <div class="flex-grow flex flex-wrap items-center justify-center gap-4">
+            <div class="flex items-center gap-2">
+              <input type="number" id="converter-amount-from" value="100" class="w-28 p-2 text-right border-0 rounded-md bg-sky-900/50 text-white">
+              <select id="converter-currency-from" class="p-2 border-0 rounded-md bg-sky-900/50 text-white">
+                <option>EUR</option>
+                <option selected>USD</option>
+                <option>PHP</option>
+              </select>
+            </div>
+            <div id="converter-equals" class="font-bold text-sky-300 text-xl">=</div>
+            <div class="flex items-center gap-2">
+              <input type="text" id="converter-amount-to" readonly class="w-28 p-2 text-right border-0 rounded-md bg-sky-900/50 text-white">
+              <select id="converter-currency-to" class="p-2 border-0 rounded-md bg-sky-900/50 text-white">
+                <option>EUR</option>
+                <option>USD</option>
+                <option selected>PHP</option>
+              </select>
+            </div>
+        </div>
+        <div id="converter-rate" class="text-xs text-sky-300 md:w-48 text-center md:text-right"></div>
+      </div>
+    </div>
+  </section>
+
   <section id="videos" class="scroll-mt-24 py-14 md:py-20">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <h2 data-i18n="videos.title" class="text-2xl font-bold text-sky-900 mb-6">Dernière vidéo</h2>
@@ -150,7 +178,7 @@
   </footer>
 
   <script>
-    const STRINGS={fr:{"nav.videos":"Vidéos","nav.visa":"Visa","nav.links":"Adresses utiles","nav.follow":"Nous suivre","hero.title":"Vivre aux Philippines","hero.tag":"Conseils, vie quotidienne, voyages et expatriation — en vidéo.","cta.watch":"Regarder sur YouTube","cta.follow":"Nous suivre","about.text":"Un site simple et léger pour rassembler nos vidéos, nos réseaux sociaux et des liens utiles pour préparer votre séjour ou votre installation aux Philippines.","videos.title":"Dernière vidéo","visa.title":"Visas pour les Philippines","visa.disclaimer":"Les informations sur les visas changent régulièrement. Consultez toujours les sites officiels de l'ambassade des Philippines de votre pays et du Bureau de l'Immigration philippin pour obtenir les informations les plus récentes et les plus précises.","visa.checker.title":"Vérificateur de Visa","visa.checker.label":"Quelle est votre nationalité ?","visa.checker.button":"Vérifier","visa.checker.result.needs_visa":"Pour votre nationalité, un visa est probablement requis avant l'arrivée.","visa.checker.result.no_visa":"Bonne nouvelle ! Les détenteurs d'un passeport de votre pays peuvent généralement entrer aux Philippines sans visa pour un séjour allant jusqu'à 30 jours.","visa.checker.result.balikbayan":"En tant que citoyen philippin ou ancien citoyen (ou son conjoint/enfant voyageant avec lui), vous pouvez bénéficier du privilège Balikbayan, autorisant un séjour d'un an sans visa.","visa.checker.result.select":"Veuillez sélectionner une nationalité.","visa.guides.title":"Guides des principaux visas","links.title":"Adresses utiles","socials.title":"Rejoignez la communauté","footer.lang":"Langue :"},en:{"nav.videos":"Videos","nav.visa":"Visa","nav.links":"Useful links","nav.follow":"Follow","hero.title":"Vivre aux Philippines","hero.tag":"Tips, everyday life, travel and expat life — on video.","cta.watch":"Watch on YouTube","cta.follow":"Follow us","about.text":"A clean one-page hub to gather our videos, social channels, and practical links for your trip or new life in the Philippines.","videos.title":"Latest video","visa.title":"Visas for the Philippines","visa.disclaimer":"Visa information changes regularly. Always consult the official websites of the Philippine embassy in your country and the Philippine Bureau of Immigration for the most current and accurate information.","visa.checker.title":"Visa Checker Tool","visa.checker.label":"What is your nationality?","visa.checker.button":"Check","visa.checker.result.needs_visa":"For your nationality, a visa is likely required before arrival.","visa.checker.result.no_visa":"Good news! Passport holders from your country can typically enter the Philippines without a visa for a stay of up to 30 days.","visa.checker.result.balikbayan":"As a Filipino citizen or former citizen (or their spouse/child traveling with them), you may be entitled to the Balikbayan Privilege, allowing a one-year visa-free stay.","visa.checker.result.select":"Please select a nationality.","visa.guides.title":"Main Visa Guides","links.title":"Useful addresses","socials.title":"Join the community","footer.lang":"Language:"}};
+    const STRINGS={fr:{"nav.videos":"Vidéos","nav.visa":"Visa","nav.links":"Adresses utiles","nav.follow":"Nous suivre","converter.title":"Convertisseur de devises", "converter.rate_text":"1 {from} = {rate} {to}","hero.title":"Vivre aux Philippines","hero.tag":"Conseils, vie quotidienne, voyages et expatriation — en vidéo.","cta.watch":"Regarder sur YouTube","cta.follow":"Nous suivre","about.text":"Un site simple et léger pour rassembler nos vidéos, nos réseaux sociaux et des liens utiles pour préparer votre séjour ou votre installation aux Philippines.","videos.title":"Dernière vidéo","visa.title":"Visas pour les Philippines","visa.disclaimer":"Les informations sur les visas changent régulièrement. Consultez toujours les sites officiels de l'ambassade des Philippines de votre pays et du Bureau de l'Immigration philippin pour obtenir les informations les plus récentes et les plus précises.","visa.checker.title":"Vérificateur de Visa","visa.checker.label":"Quelle est votre nationalité ?","visa.checker.button":"Vérifier","visa.checker.result.needs_visa":"Pour votre nationalité, un visa est probablement requis avant l'arrivée.","visa.checker.result.no_visa":"Bonne nouvelle ! Les détenteurs d'un passeport de votre pays peuvent généralement entrer aux Philippines sans visa pour un séjour allant jusqu'à 30 jours.","visa.checker.result.balikbayan":"En tant que citoyen philippin ou ancien citoyen (ou son conjoint/enfant voyageant avec lui), vous pouvez bénéficier du privilège Balikbayan, autorisant un séjour d'un an sans visa.","visa.checker.result.select":"Veuillez sélectionner une nationalité.","visa.guides.title":"Guides des principaux visas","links.title":"Adresses utiles","socials.title":"Rejoignez la communauté","footer.lang":"Langue :"},en:{"nav.videos":"Videos","nav.visa":"Visa","nav.links":"Useful links","nav.follow":"Follow","converter.title":"Currency Converter", "converter.rate_text":"1 {from} = {rate} {to}","hero.title":"Vivre aux Philippines","hero.tag":"Tips, everyday life, travel and expat life — on video.","cta.watch":"Watch on YouTube","cta.follow":"Follow us","about.text":"A clean one-page hub to gather our videos, social channels, and practical links for your trip or new life in the Philippines.","videos.title":"Latest video","visa.title":"Visas for the Philippines","visa.disclaimer":"Visa information changes regularly. Always consult the official websites of the Philippine embassy in your country and the Philippine Bureau of Immigration for the most current and accurate information.","visa.checker.title":"Visa Checker Tool","visa.checker.label":"What is your nationality?","visa.checker.button":"Check","visa.checker.result.needs_visa":"For your nationality, a visa is likely required before arrival.","visa.checker.result.no_visa":"Good news! Passport holders from your country can typically enter the Philippines without a visa for a stay of up to 30 days.","visa.checker.result.balikbayan":"As a Filipino citizen or former citizen (or their spouse/child traveling with them), you may be entitled to the Balikbayan Privilege, allowing a one-year visa-free stay.","visa.checker.result.select":"Please select a nationality.","visa.guides.title":"Main Visa Guides","links.title":"Useful addresses","socials.title":"Join the community","footer.lang":"Language:"}};
     
     const VISA_DATA = {
       fr: [
@@ -469,6 +497,55 @@
     document.getElementById('toggleLang').addEventListener('click',()=>{const cur=localStorage.getItem('vap_lang')||'fr';setLang(cur==='fr'?'en':'fr');});
     document.getElementById('setFR').addEventListener('click',()=>setLang('fr'));
     document.getElementById('setEN').addEventListener('click',()=>setLang('en'));
+
+    // --- Currency Converter ---
+    const amountFrom = document.getElementById('converter-amount-from');
+    const currencyFrom = document.getElementById('converter-currency-from');
+    const amountTo = document.getElementById('converter-amount-to');
+    const currencyTo = document.getElementById('converter-currency-to');
+    const rateDiv = document.getElementById('converter-rate');
+    let rates = {};
+
+    async function fetchRates() {
+      try {
+        const response = await fetch('https://api.frankfurter.app/latest?from=USD');
+        const data = await response.json();
+        rates = data.rates;
+        rates['USD'] = 1; // Add base currency
+        updateConversion();
+      } catch (error) {
+        console.error("Error fetching currency rates:", error);
+        rateDiv.textContent = "Could not load rates.";
+      }
+    }
+
+    function updateConversion() {
+      const from = currencyFrom.value;
+      const to = currencyTo.value;
+      const amount = parseFloat(amountFrom.value);
+
+      if (isNaN(amount) || !rates[from] || !rates[to]) {
+        amountTo.value = '';
+        return;
+      }
+
+      const rate = rates[to] / rates[from];
+      const result = amount * rate;
+      amountTo.value = result.toFixed(2);
+      
+      const lang = localStorage.getItem('vap_lang') || 'fr';
+      const rateText = STRINGS[lang]['converter.rate_text']
+        .replace('{from}', from)
+        .replace('{rate}', rate.toFixed(4))
+        .replace('{to}', to);
+      rateDiv.textContent = rateText;
+    }
+
+    amountFrom.addEventListener('input', updateConversion);
+    currencyFrom.addEventListener('change', updateConversion);
+    currencyTo.addEventListener('change', updateConversion);
+
+    document.addEventListener('DOMContentLoaded', fetchRates);
   </script>
   <noscript><div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 text-sm text-slate-600">JavaScript est désactivé. Le site reste lisible en français, mais le changement de langue ne sera pas disponible.</div></noscript>
 </body>
